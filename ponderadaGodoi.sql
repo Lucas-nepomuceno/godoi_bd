@@ -16,15 +16,16 @@ emails VARCHAR(300) not null
 create table manuals (
 id SERIAL primary key,
 names VARCHAR(150) not null,
-categories VARCHAR(150)
+categories VARCHAR(150) not null
 );
 
 create table files (
 id SERIAL primary key,
 manuals_id INTEGER,
 foreign key (manuals_id) references manuals(id),
-names VARCHAR(150),
-URL VARCHAR(1000)
+names VARCHAR(150) not null,
+types VARCHAR(20) not null,
+URL VARCHAR(1000) not null
 );
 
 create table delegations (
